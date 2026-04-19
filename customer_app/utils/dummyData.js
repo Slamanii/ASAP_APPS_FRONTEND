@@ -1,0 +1,281 @@
+import { IMAGES } from "@/assets/assetsData";
+
+const RIDERS = [
+  { id: 1, name: "John Doe", rating: 4.8, deliveries: "1,250+", eta: "5 min" },
+  {
+    id: 2,
+    name: "Sarah Johnson",
+    rating: 4.9,
+    deliveries: "980+",
+    eta: "7 min",
+  },
+  {
+    id: 3,
+    name: "Michael Smith",
+    rating: 4.7,
+    deliveries: "1,540+",
+    eta: "6 min",
+  },
+  { id: 4, name: "Emily Davis", rating: 4.6, deliveries: "800+", eta: "8 min" },
+  {
+    id: 5,
+    name: "James Wilson",
+    rating: 4.8,
+    deliveries: "1,120+",
+    eta: "4 min",
+  },
+  {
+    id: 6,
+    name: "Sophia Brown",
+    rating: 4.9,
+    deliveries: "1,300+",
+    eta: "9 min",
+  },
+  { id: 7, name: "Daniel Lee", rating: 4.5, deliveries: "700+", eta: "10 min" },
+  {
+    id: 8,
+    name: "Olivia Martinez",
+    rating: 4.7,
+    deliveries: "1,050+",
+    eta: "6 min",
+  },
+  {
+    id: 9,
+    name: "William Anderson",
+    rating: 4.6,
+    deliveries: "950+",
+    eta: "5 min",
+  },
+  {
+    id: 10,
+    name: "Ava Thompson",
+    rating: 4.8,
+    deliveries: "1,400+",
+    eta: "7 min",
+  },
+];
+
+export const shipments = [
+  {
+    id: "FNL1345603",
+    recipient: "Ramesh",
+    status: "In Delivery",
+    statusColor: "text-orange-400",
+  },
+  {
+    id: "FNL1345403",
+    sender: "Ramesh",
+    status: "Completed",
+    statusColor: "text-green-400",
+  },
+  {
+    id: "FNL1888403",
+    sender: "Anu",
+    status: "Completed",
+    statusColor: "text-green-400",
+  },
+  {
+    id: "FMD348403",
+    recipient: "David",
+    status: "Completed",
+    statusColor: "text-green-400",
+  },
+];
+
+export const INITIAL_LOCATIONS = [
+  { id: "1", name: "Home", lat: 6.393, lng: 5.609, date: "Nov 1, 2025" },
+  {
+    id: "2",
+    name: "University Campus",
+    lat: 6.3942,
+    lng: 5.61,
+    date: "Oct 30, 2025",
+  },
+  {
+    id: "3",
+    name: "Shopping Mall",
+    lat: 6.392,
+    lng: 5.608,
+    date: "Oct 28, 2025",
+  },
+  { id: "4", name: "Park", lat: 6.3955, lng: 5.6075, date: "Oct 25, 2025" },
+  {
+    id: "5",
+    name: "Supermarket",
+    lat: 6.391,
+    lng: 5.611,
+    date: "Oct 22, 2025",
+  },
+  {
+    id: "6",
+    name: "Friend’s Place",
+    lat: 6.3925,
+    lng: 5.613,
+    date: "Oct 20, 2025",
+  },
+  { id: "7", name: "Cafe", lat: 6.39, lng: 5.606, date: "Oct 18, 2025" },
+  { id: "8", name: "Gym", lat: 6.3948, lng: 5.6125, date: "Oct 17, 2025" },
+  { id: "9", name: "Church", lat: 6.396, lng: 5.6095, date: "Oct 15, 2025" },
+  {
+    id: "10",
+    name: "Clinic / Pharmacy",
+    lat: 6.3935,
+    lng: 5.605,
+    date: "Oct 14, 2025",
+  },
+  { id: "11", name: "Hotel", lat: 6.389, lng: 5.614, date: "Oct 12, 2025" },
+  { id: "12", name: "Bakery", lat: 6.3905, lng: 5.6085, date: "Oct 10, 2025" },
+  {
+    id: "13",
+    name: "Barbershop",
+    lat: 6.3915,
+    lng: 5.607,
+    date: "Oct 8, 2025",
+  },
+  { id: "14", name: "Mechanic", lat: 6.395, lng: 5.6135, date: "Oct 6, 2025" },
+  { id: "15", name: "Cinema", lat: 6.3965, lng: 5.6115, date: "Oct 4, 2025" },
+  {
+    id: "16",
+    name: "Museum / Cultural Site",
+    lat: 6.3928,
+    lng: 5.6055,
+    date: "Oct 2, 2025",
+  },
+  {
+    id: "17",
+    name: "Pharmacy (2)",
+    lat: 6.3898,
+    lng: 5.6102,
+    date: "Sep 30, 2025",
+  },
+  { id: "18", name: "Salon", lat: 6.3908, lng: 5.6145, date: "Sep 28, 2025" },
+  { id: "19", name: "School", lat: 6.3945, lng: 5.6068, date: "Sep 26, 2025" },
+  {
+    id: "20",
+    name: "Community Centre",
+    lat: 6.3938,
+    lng: 5.6148,
+    date: "Sep 24, 2025",
+  },
+];
+
+// Group orders by month
+const orderSections = [
+  {
+    title: "May 2025",
+    data: [
+      {
+        id: "TRK-1A9X-74KD",
+        date: "23-05-2025",
+        time: "9:28pm",
+        location: "Sapele Rd Benin",
+        category: "Food",
+        distance: "17km",
+        direction: "right",
+      },
+      {
+        id: "TRK-2B8K-53QL",
+        date: "23-05-2025",
+        time: "10:45am",
+        location: "Lekki Phase 1",
+        category: "Gadgets",
+        distance: "8km",
+        direction: "left",
+      },
+      {
+        id: "TRK-3C7M-62VR",
+        date: "23-05-2025",
+        time: "3:15pm",
+        location: "Abuja Garki",
+        category: "Fabric",
+        distance: "24km",
+        direction: "right",
+      },
+      {
+        id: "TRK-4D6P-81ZW",
+        date: "24-05-2025",
+        time: "7:00pm",
+        location: "Yaba Lagos",
+        category: "Documents",
+        distance: "5km",
+        direction: "left",
+      },
+    ],
+  },
+  {
+    title: "April 2025",
+    data: [
+      {
+        id: "TRK-5E3N-92PQ",
+        date: "15-04-2025",
+        time: "2:30pm",
+        location: "Victoria Island",
+        category: "Electronics",
+        distance: "12km",
+        direction: "right",
+      },
+      {
+        id: "TRK-3C7M-62VR",
+        date: "23-05-2025",
+        time: "3:15pm",
+        location: "Abuja Garki",
+        category: "Fabric",
+        distance: "24km",
+        direction: "right",
+      },
+      {
+        id: "TRK-4D6P-81ZW",
+        date: "24-05-2025",
+        time: "7:00pm",
+        location: "Yaba Lagos",
+        category: "Documents",
+        distance: "5km",
+        direction: "left",
+      },
+      {
+        id: "TRK-3C7M-62VR",
+        date: "23-05-2025",
+        time: "3:15pm",
+        location: "Abuja Garki",
+        category: "Fabric",
+        distance: "24km",
+        direction: "right",
+      },
+      {
+        id: "TRK-4D6P-81ZW",
+        date: "24-05-2025",
+        time: "7:00pm",
+        location: "Yaba Lagos",
+        category: "Documents",
+        distance: "5km",
+        direction: "left",
+      },
+    ],
+  },
+];
+
+const currentTrackings = [
+  {
+    id: "TRK-9F2X-7A6B",
+    location: "Sapele Rd Benin",
+    status: "In Transit",
+    statusColor: "#22c55e",
+    map: IMAGES.dummy_map,
+  },
+  {
+    id: "TRK-8D7L-5Q3C",
+    location: "Lekki Phase 1",
+    status: "Pending Pickup",
+    statusColor: "#facc15",
+    map: IMAGES.dummy_map,
+  },
+  {
+    id: "TRK-1H9J-4T7Z",
+    location: "Abuja Garki",
+    status: "Delivered",
+    statusColor: "#3b82f6",
+    map: IMAGES.dummy_map,
+  },
+];
+
+export { orderSections, currentTrackings, RIDERS };
